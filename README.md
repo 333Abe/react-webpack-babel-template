@@ -2,6 +2,16 @@
 
 Create a React web app with a webpack bundler.
 
+## Get started
+
+Fork and clone the repo and then download all dependancies:
+
+```
+npm install
+```
+
+### Notes
+
 Assumes use of VScode with [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) plugin. If your set-up is different use [webpack-dev-server](https://webpack.js.org/guides/development/#using-webpack-dev-server) instead of watch mode.
 
 ---
