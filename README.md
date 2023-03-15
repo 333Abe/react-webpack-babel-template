@@ -53,7 +53,7 @@ Configuration file for Babel where we tell Babel which [presets](https://babeljs
 npm set-up used:
 
 ```
-npm install --save-dev webpack webpack-cli style-loader css-loader html-webpack-plugin babel-loader
+npm install --save-dev webpack webpack-cli style-loader css-loader babel-loader html-webpack-plugin copy-webpack-plugin
 ```
 
 [Webpack is used to produce a static module from your code](https://webpack.js.org/concepts/)
@@ -65,7 +65,9 @@ npm install --save-dev webpack webpack-cli style-loader css-loader html-webpack-
 - mode: set to development. For production see [webpack production guide](https://webpack.js.org/guides/production/)
 - entry: single entry point set to ./src/index.js. If multiple entry points required see [output management guide](https://webpack.js.org/guides/output-management/)
 - devtool: inline source map aids with errors finding errors, development only
-- plugins: HtmlWebpackPlugin is used for setting the template output html file [options](https://github.com/jantimon/html-webpack-plugin#options)
+- plugins:
+  - HtmlWebpackPlugin is used for setting the template output html file [options](https://github.com/jantimon/html-webpack-plugin#options)
+  - [CopyWebpackPlugin](https://webpack.js.org/plugins/copy-webpack-plugin/) is used to transfer images and fonts from the public folder to the dist folder
 - output: settings for the filename and location of the build files. clean: true ensures old files from previous builds are deleted.
 - module: rules: set up for [Babel](https://webpack.js.org/loaders/babel-loader/), css, images and fonts
 

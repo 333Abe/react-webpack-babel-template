@@ -9,6 +9,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./public/index.html",
     }),
+    new CopyPlugin({
+      patterns: [
+        { from: "./public/images", to: "./images" },
+        { from: "./public/fonts", to: "./fonts" },
+      ],
+    }),
   ],
   output: {
     filename: "bundle.js",
