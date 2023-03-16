@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "watch": "webpack --watch"
+    "start": "webpack serve --open"
   },
   "keywords": [],
   "author": "",
@@ -22,10 +22,12 @@
     "html-webpack-plugin": "^5.5.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.76.1",
-    "webpack-cli": "^5.0.1"
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.12.0"
   },
   "dependencies": {
     "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-router-dom": "^6.9.0"
   }
 }

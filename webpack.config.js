@@ -11,15 +11,20 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: "./public/images", to: "./images" },
-        { from: "./public/fonts", to: "./fonts" },
+        // { from: "./public/images", to: "./images" },
+        // { from: "./public/fonts", to: "./fonts" },
       ],
     }),
   ],
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
+    publicPath: "/",
     clean: true,
+  },
+  devServer: {
+    static: "./dist",
+    // historyApiFallback: true,
   },
   module: {
     rules: [
@@ -46,5 +51,8 @@ module.exports = {
         type: "asset/resource",
       },
     ],
+  },
+  resolve: {
+    extensions: [".js", ".jsx"],
   },
 };

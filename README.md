@@ -10,10 +10,6 @@ Fork and clone the repo and then download all dependancies:
 npm install
 ```
 
-### Notes
-
-Assumes use of VScode with [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) plugin. If your set-up is different use [webpack-dev-server](https://webpack.js.org/guides/development/#using-webpack-dev-server) instead of watch mode.
-
 ---
 
 # REACT
@@ -21,14 +17,10 @@ Assumes use of VScode with [Live Server](https://marketplace.visualstudio.com/it
 npm set-up used:
 
 ```
-npm install react react-router-dom
+npm install react react-dom react-router-dom
 ```
 
-If routing is required consider installing [React Router](https://reactrouter.com/en/main):
-
-```
-npm react-router-dom
-```
+[React Router](https://reactrouter.com/en/main) is included for convenience.
 
 ---
 
@@ -53,7 +45,7 @@ Configuration file for Babel where we tell Babel which [presets](https://babeljs
 npm set-up used:
 
 ```
-npm install --save-dev webpack webpack-cli style-loader css-loader babel-loader html-webpack-plugin copy-webpack-plugin
+npm install --save-dev webpack webpack-cli style-loader css-loader babel-loader html-webpack-plugin copy-webpack-plugin webpack-dev-server
 ```
 
 [Webpack is used to produce a static module from your code](https://webpack.js.org/concepts/)
@@ -67,9 +59,10 @@ npm install --save-dev webpack webpack-cli style-loader css-loader babel-loader 
 - devtool: inline source map aids with errors finding errors, development only
 - plugins:
   - HtmlWebpackPlugin is used for setting the template output html file [options](https://github.com/jantimon/html-webpack-plugin#options)
-  - [CopyWebpackPlugin](https://webpack.js.org/plugins/copy-webpack-plugin/) is used to transfer images and fonts from the public folder to the dist folder
+  - [CopyWebpackPlugin](https://webpack.js.org/plugins/copy-webpack-plugin/) is used to transfer images and fonts from the public folder to the dist folder. Uncomment the respective patterns when files are added to the images and fonts folders.
 - output: settings for the filename and location of the build files. clean: true ensures old files from previous builds are deleted.
 - module: rules: set up for [Babel](https://webpack.js.org/loaders/babel-loader/), css, images and fonts
+- resolve: extensions: allows import of files with specifying (.js, .jsx) file extensions
 
 ## package.json
 
@@ -81,12 +74,10 @@ Because we will not be publishing to the npm registry:
 Scripts:
 
 - "build": "webpack",
-- "watch": "webpack --watch"
+- "start": "webpack serve --open"
 
-[Using Watch Mode](https://webpack.js.org/guides/development/#using-watch-mode)
+[Using webpack dev server](https://webpack.js.org/guides/development/#using-webpack-dev-server)
 
 ```
-run npm watch
+npm start
 ```
-
-Used in conjuction with the VScode add-on '[Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)' will automatically refresh the browser with any changes made to watched files. Alternatively you can use [webpack-dev-server](https://webpack.js.org/guides/development/#using-webpack-dev-server)
