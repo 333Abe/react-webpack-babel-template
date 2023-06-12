@@ -1,5 +1,5 @@
 # OVERVIEW
-
+An alternative to 'create-react-app' without the bloat.
 Create a React web app with a webpack bundler.
 
 ## Get started
